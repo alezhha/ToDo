@@ -33,15 +33,15 @@
         <button type="submit" value="Сохранить">Сохранить</button>
     </form>
 
-{% if todos.count > 0 %}
-<span>Список Всех дел:</span>
-<table class="table">
-    <tr><th>ID</th><th>Название</th><th>Описание</th><th>Дата</th></tr>
-    {%for todo in todos%}
-    <tr><td>{{todo.id}}</td><td>{{todo.title}}</td><td>{{todo.description}}</td><td>{{todo.created_at}}</td></tr>
-    {% endfor %}
-</table>
-{% endif %}
+    {% if todos.count > 0 %}
+    <span>Список Всех дел:</span>
+    <table class="table">
+        <tr><th>ID</th><th>Название</th><th>Описание</th><th>Дата</th><th>Хаммаме</th></tr>
+        {%for todo in todos%}
+        <tr><td>{{todo.id}}</td><td>{{todo.title}}</td><td>{{todo.description}}</td><td>{{todo.created_at}}</td><td><a href="edit/{{todo.id}}">Хаммаме</a></td></tr>
+        {% endfor %}
+    </table>
+    {% endif %}
 
 
 
